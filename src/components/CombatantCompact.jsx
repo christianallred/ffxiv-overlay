@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-
+import Jobs from '../utils/jobs'
 export default class CombatantCompact extends Component {
     jobImage(job) {
-        return './glow/' + job.toLowerCase() + '.png';
+        return Jobs[job.toLowerCase()];
     }
 
     render() {
@@ -42,7 +42,7 @@ export default class CombatantCompact extends Component {
 
                         <div className="info">
                             <span className='job-icon'>
-                                <img src={this.jobImage(this.props.job)} />
+                                <img src={Jobs[this.props.job.toLowerCase()]} alt={this.props.job}/>
                             </span>
                             <span className="rank">
                                 {this.props.rank}.

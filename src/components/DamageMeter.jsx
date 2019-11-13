@@ -3,6 +3,7 @@ import Header from './Header';
 import Combatants from './Combatants';
 import Debugger from './Debugger';
 import {sortBy, filter} from 'lodash'
+import classnames from 'classnames';
 
 var EncountersArray = []
 
@@ -11,7 +12,8 @@ export default class DamageMeter extends React.Component {
         super(props);
         this.state = {
             currentViewIndex: 0,
-            data: {}
+            data: {},
+            isLocked: false,
         };
     }
 
@@ -26,12 +28,16 @@ export default class DamageMeter extends React.Component {
         this.setState( { data: update.detail } )
     }
 
-    onOverlayStateUpdate(update){
+    onOverlayStateUpdate = (update) => {
+        this.setState({ isLocked: update.detail.isLocked })
+    }
+
+    onOverlayStateUpdate( update ){
         // console.log(update.detail)
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (nextState.data.Encounter.encdps === '---') {
+        if (nextState.data && nextState.data.Encounter && nextState.data.Encounter.encdps === '---') {
             return false;
         }
 
@@ -133,10 +139,17 @@ export default class DamageMeter extends React.Component {
             }
         }
 
+        
+        
         return (
             <div
                 onClick={this.handleClick}
-                className={'damage-meter' + (!this.props.parseData.isActive ? ' inactive' : '') + (!this.props.noJobColors ? ' show-job-colors' : '')}>
+                className={classnames({
+                    'damage-meter':true,
+                    'inactive': !this.props.parseData.isActive, 
+                    'show-job-colors': !this.props.noJobColors,
+                    'resizable': !this.state.isLocked,
+                })}>
                 <Header
                     encounter={encounterData}
                     data={combatants}
