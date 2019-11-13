@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class CombatantCompact extends Component {
     jobImage(job) {
-        return '/glow/' + job.toLowerCase() + '.png';
+        return './glow/' + job.toLowerCase() + '.png';
     }
 
     render() {
