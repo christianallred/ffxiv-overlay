@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ffxiv-overlay/static/css/main.96fc6697.chunk.css",
-    "main.js": "/ffxiv-overlay/static/js/main.b0ac434a.chunk.js",
-    "main.js.map": "/ffxiv-overlay/static/js/main.b0ac434a.chunk.js.map",
+    "main.js": "/ffxiv-overlay/static/js/main.9c0318ad.chunk.js",
+    "main.js.map": "/ffxiv-overlay/static/js/main.9c0318ad.chunk.js.map",
     "runtime-main.js": "/ffxiv-overlay/static/js/runtime-main.68981185.js",
     "runtime-main.js.map": "/ffxiv-overlay/static/js/runtime-main.68981185.js.map",
     "static/js/2.eb4655f6.chunk.js": "/ffxiv-overlay/static/js/2.eb4655f6.chunk.js",
     "static/js/2.eb4655f6.chunk.js.map": "/ffxiv-overlay/static/js/2.eb4655f6.chunk.js.map",
     "index.html": "/ffxiv-overlay/index.html",
-    "precache-manifest.2306d9bc29972c6995337d115a81a1a3.js": "/ffxiv-overlay/precache-manifest.2306d9bc29972c6995337d115a81a1a3.js",
+    "precache-manifest.042635733b563e635e2a1cb1e559a5f0.js": "/ffxiv-overlay/precache-manifest.042635733b563e635e2a1cb1e559a5f0.js",
     "service-worker.js": "/ffxiv-overlay/service-worker.js",
     "static/css/main.96fc6697.chunk.css.map": "/ffxiv-overlay/static/css/main.96fc6697.chunk.css.map",
     "static/media/logo.svg": "/ffxiv-overlay/static/media/logo.25bf045c.svg"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.68981185.js",
     "static/js/2.eb4655f6.chunk.js",
     "static/css/main.96fc6697.chunk.css",
-    "static/js/main.b0ac434a.chunk.js"
+    "static/js/main.9c0318ad.chunk.js"
   ]
 }
