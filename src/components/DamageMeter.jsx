@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header';
 import Combatants from './Combatants';
 import Debugger from './Debugger';
-import {sortBy, filter} from 'lodash'
+import {sortBy, filter, concat} from 'lodash'
 import classnames from 'classnames';
 
 var EncountersArray = []
@@ -14,13 +14,17 @@ export default class DamageMeter extends React.Component {
             currentViewIndex: 0,
             data: {},
             isLocked: false,
+            Encounters: [],
+            selectedEncounter: null 
         };
     }
 
     componentDidMount() {
         // pass this into a redux store so i can build graphs and such
+
+        // I need to connect these listeners to teh store ...
         document.addEventListener('onOverlayDataUpdate', this.onOverlayDataUpdate);
-        document.addEventListener("onOverlayStateUpdate", this.onOverlayStateUpdate)
+        document.addEventListener("onOverlayStateUpdate", this.onOverlayStateUpdate);
         document.addEventListener("message", this.onOverlayMessage)
     }
        
@@ -37,38 +41,28 @@ export default class DamageMeter extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (nextState.data && nextState.data.Encounter && nextState.data.Encounter.encdps === '---') {
-            return false;
+        // TODO: move this to a store. ... i should move all of this to a store. 
+        if (this.state.data && this.state.data.Encounter && this.state.data.Encounter.title === 'Encounter' &&
+            nextState.data.Encounter.title !== 'Encounter') {
+            const newEncs = concat(
+                [{
+                    Encounter: nextState.data.Encounter,
+                    Combatant: nextState.data.Combatant
+                }],
+                this.state.Encounters
+            )
+            if (newEncs.length > 15){
+                newEncs.pop();
+            }
+
+            this.setState({Encounters: newEncs})
         }
-
-        if (this.state.currentViewIndex !== nextState.currentViewIndex) {
-            return true;
-        }
-
-        if (this.state.selectedEncounter) {
-            return false;
-        }
-
-        return true;
-    }
-
-    componentWillReceiveProps(nextProps) {
-        // save this encounter data
-        // if (this.props.parseData.Encounter.title === 'Encounter' &&
-        //     nextProps.parseData.Encounter.title !== 'Encounter') {
-        //     EncountersArray.unshift({
-        //         Encounter: nextProps.parseData.Encounter,
-        //         Combatant: nextProps.parseData.Combatant
-        //     });
-
-        //     // Only keep the last 10 fights
-        //     if (EncountersArray.length > 10) {
-        //         EncountersArray.pop();
-        //     }
-        // }
+        return true
     }
 
     handleCombatRowClick(e) {
+        // TODO: build teh combat stats ui per user. 
+
     }
 
     handleClick(e) {
@@ -91,9 +85,10 @@ export default class DamageMeter extends React.Component {
     }
 
     handleSelectEncounter(index, e) {
+        console.log('handle select', index);
         if (index >= 0) {
             this.setState({
-                selectedEncounter: EncountersArray[index]
+                selectedEncounter: index 
             });
         }
         else {
@@ -101,20 +96,23 @@ export default class DamageMeter extends React.Component {
                 selectedEncounter: null
             });
         }
-        this.render();
-        console.log('handle select', index);
     }
 
     render() {
+        console.log(this.state)
+        console.log(this.state.Encounters.map(item => item.Encounter.title))
         const debug = false;
 
         var combatants = this.state.data.Combatant; 
         var encounterData = this.state.data.Encounter;
 
-        if (this.state.selectedEncounter) {
-            combatants = this.state.selectedEncounter.Combatant;
-            encounterData = this.state.selectedEncounter.Encounter;
+        if (this.state.selectedEncounter !== null) {
+            console.log('selected')
+            const index = this.state.selectedEncounter;
+            combatants = this.state.Encounters[index].Combatant;
+            encounterData = this.state.Encounters[index].Encounter;
         }
+
         else {
             // Healing
             // need to resort data if currentView is not damage
@@ -156,6 +154,7 @@ export default class DamageMeter extends React.Component {
                     onViewChange={this.handleViewChange.bind(this)}
                     onSelectEncounter={this.handleSelectEncounter.bind(this)}
                     currentView={this.props.chartViews[this.state.currentViewIndex]}
+                    encounters={this.state.Encounters}
                     />
                 {
                     encounterData && encounterData.damage ? 

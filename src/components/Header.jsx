@@ -104,7 +104,7 @@ export default class Header extends Component {
                                 <div onClick={this.props.onSelectEncounter.bind(this, null)}>
                                     Current Fight
                                 </div>
-                                {EncountersArray.map(function(encounter, i) {
+                                {this.props.encounters.map(function(encounter, i) {
                                     return (
                                         <div key={i} onClick={this.props.onSelectEncounter.bind(this, i)}>
                                             {encounter.Encounter.title}
