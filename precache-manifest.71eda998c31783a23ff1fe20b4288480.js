@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "46d6544cd58d4ca8a25ad4b7e38e16be",
+    "revision": "6af4ee29752ed6195071db1c46b7befe",
     "url": "/ffxiv-overlay/index.html"
   },
   {
-    "revision": "4811b7db4b5bef463903",
+    "revision": "98c72bd3110634fe3537",
     "url": "/ffxiv-overlay/static/css/main.032cb47b.chunk.css"
   },
   {
-    "revision": "35270c636e602a6cbe5e",
-    "url": "/ffxiv-overlay/static/js/2.7603a726.chunk.js"
+    "revision": "ad138683db4b8a85e92d",
+    "url": "/ffxiv-overlay/static/js/2.7a4f9c8d.chunk.js"
   },
   {
-    "revision": "4811b7db4b5bef463903",
-    "url": "/ffxiv-overlay/static/js/main.d84d989f.chunk.js"
+    "revision": "98c72bd3110634fe3537",
+    "url": "/ffxiv-overlay/static/js/main.cdf8bfd5.chunk.js"
   },
   {
     "revision": "fe455779dc1b7fe8a139",
