@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ffxiv-overlay/static/css/main.032cb47b.chunk.css",
+    "main.js": "/ffxiv-overlay/static/js/main.0a8fe8f9.chunk.js",
+    "main.js.map": "/ffxiv-overlay/static/js/main.0a8fe8f9.chunk.js.map",
+    "runtime-main.js": "/ffxiv-overlay/static/js/runtime-main.68981185.js",
+    "runtime-main.js.map": "/ffxiv-overlay/static/js/runtime-main.68981185.js.map",
+    "static/js/2.7603a726.chunk.js": "/ffxiv-overlay/static/js/2.7603a726.chunk.js",
+    "static/js/2.7603a726.chunk.js.map": "/ffxiv-overlay/static/js/2.7603a726.chunk.js.map",
+    "index.html": "/ffxiv-overlay/index.html",
+    "precache-manifest.42a96044677ba4cada3c7044fe1bc16f.js": "/ffxiv-overlay/precache-manifest.42a96044677ba4cada3c7044fe1bc16f.js",
+    "service-worker.js": "/ffxiv-overlay/service-worker.js",
+    "static/css/main.032cb47b.chunk.css.map": "/ffxiv-overlay/static/css/main.032cb47b.chunk.css.map",
+    "static/media/logo.svg": "/ffxiv-overlay/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.68981185.js",
+    "static/js/2.7603a726.chunk.js",
+    "static/css/main.032cb47b.chunk.css",
+    "static/js/main.0a8fe8f9.chunk.js"
+  ]
+}
