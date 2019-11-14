@@ -8,7 +8,6 @@ import './styles.scss'
 
 // TODO: work out better styling
 const CombatantDetails =(props) =>{
-    console.log(props);
     var rows = [];
     for (const prop in props.Combatant) {
         if (!props.Combatant.hasOwnProperty(prop)) continue;
