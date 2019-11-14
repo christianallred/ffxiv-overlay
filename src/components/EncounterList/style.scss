@@ -1,0 +1,15 @@
+.encounter-data {
+    -webkit-user-select: initial;
+    //line-height: 20px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  padding: 2px 4px;
+  z-index: 100;
+}

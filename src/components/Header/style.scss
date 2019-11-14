@@ -1,0 +1,26 @@
+.header{
+    background-color: rgba(0,0,0,.25);
+}
+.encounter-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    padding: 6px;
+    font-size: 12px;
+    -webkit-user-select: none;
+}
+
+.arrow{
+    margin-right: 4px;
+}
+
+.chart-view-switcher {
+    &.Healing{
+        background-color: green;
+    }
+    &.Tanking {
+        background-color: Red;
+    }
+}
+

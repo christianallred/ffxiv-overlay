@@ -1,15 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header'
+import { Provider } from 'react-redux'
 import DamageMeter from './components/DamageMeter';
+import store from './store/store'
+
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <DamageMeter />
-
-    </div>
+    </Provider>
   );
 }
 
