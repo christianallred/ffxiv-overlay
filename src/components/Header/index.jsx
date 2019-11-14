@@ -11,7 +11,6 @@ const Header = (props) => {
             <div className="encounter-header">
                 <div>
                     <EncounterList />
-                    
                 </div>
                 <div>
                     <div className="button arrow"
@@ -24,7 +23,6 @@ const Header = (props) => {
                     </div>
                 </div>
             </div>
-            
             <EncounterStats />
         </div>
     );
