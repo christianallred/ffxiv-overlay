@@ -11,11 +11,7 @@ import {
 } from '../store/store'
 
 class DamageMeter extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {    
+    render() {  
         return (
             <div
                 onClick={this.handleClick}

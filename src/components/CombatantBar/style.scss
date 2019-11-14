@@ -52,32 +52,48 @@ li:last-child {
     &.sch {
         background-color: #4442a8;
     }
+
     &.arc,  
     &.brd {
         background-color: #adc551;
     }
+
     &.gld,  
     &.pld {
         background-color: #7b9aa2;
     }
+
     &.mrd, 
     &.war {
         background-color: #a91a16;
     }
+
     &.drk {
         background-color: #4a2829;
     }
+
     &.ast {
         background-color: #f6da6a;
     }
+
     &.mch {
         background-color: #6bcec2;
     }
+
     &.sam {
-        background-color: #184B4D;
+        background-color: #8ad87f;
     }
+
     &.rdm {
         background-color: #E1907E;
+    }
+
+    &.dnc{
+        background-color: #dc84c3;
+    }
+
+    &.gbr{
+        background-color: #8b91f0;
     }
 }
 

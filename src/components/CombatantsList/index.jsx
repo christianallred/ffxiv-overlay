@@ -6,9 +6,10 @@ import {getSelectedData,chartViews} from '../../store/store'
 import './style.scss'
 
 const Combatants = (props) => {
-    var maxRows = 12;
-    var names =  Object.keys(props.Combatants)
-    var maxdps = false;
+    let maxRows = 20;
+    let names =  Object.keys(props.Combatants)
+    let maxdps = false;
+    let ignoreRank = 0;
     
     const buildHealerData = (combatant) => {
         return {
@@ -41,18 +42,20 @@ const Combatants = (props) => {
             percentage: combatant['damage%']
         }
     }
+    
 
-    var test = names.map((item, index) => {
-        
+    let combatantRows = names.map((item, index) => {        
         if (index > maxRows) return null;
         let combatant = props.Combatants[item];
         let stats = null;
         let isSelf = combatant.name === 'YOU' || combatant.name === 'You';
 
-        if (combatant.Job !== "") {
+        if (combatant.Job === ""){
+            ignoreRank += 1
+        } else if (combatant.Job !== "") {
             if (props.chartView === chartViews.Healing) {
                 if (parseInt(combatant.healed, 10) > 0) {
-                    if (index === 0){
+                    if (!maxdps){
                         maxdps = parseFloat(combatant.healed);
                     }
                     stats = buildHealerData(combatant)
@@ -60,14 +63,14 @@ const Combatants = (props) => {
             }
             else if (props.chartView === chartViews.Tanking) {
                 if (parseInt(combatant.damagetaken, 10) > 0) {
-                    if(index === 0){
+                    if(!maxdps){
                         maxdps = parseFloat(combatant.damagetaken);
                     }
                     stats = buildTankData(combatant)
                 }
             }
             else {
-                if(index === 0){
+                if(!maxdps){
                     maxdps = parseFloat(combatant.damage);
                 }
                 stats = buildDamageData(combatant)
@@ -75,7 +78,7 @@ const Combatants = (props) => {
 
             return <CombatantBar
                     onClick={props.onClick}
-                    rank={index + 1}
+                    rank={ index + 1 - ignoreRank }
                     data={combatant}
                     isSelf={isSelf}
                     key={combatant.name}
@@ -85,9 +88,41 @@ const Combatants = (props) => {
         return null
     })
 
+    // var types = [
+    //     'pld',
+    //     'war',
+    //     'drk',
+    //     'gbr',
+
+    //     'whm',
+    //     'sch',
+    //     'ast',
+
+
+    //     "mnk",
+    //     'rog',
+    //     'drg',
+    //     'sam',
+
+    //     'blm',
+    //     'smn',
+    //     'rdm',
+
+    //     'brd',
+    //     'mch',
+    //     'dnc'
+    // ]
+    // let test = [];
+    // for (const [index,item] of types) {
+    //     test.push( 
+    //         <li class="row">
+    //             <div class={`bar ${item}`} style={{width: '100%'}}/>
+    //             <div className="text-overlay">{item}</div>
+    //         </li>)
+    // }
     return (
         <ul className="combatants">
-            {test}
+            {combatantRows}
         </ul>
     );
 }

@@ -2,7 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import EncounterList from '../EncounterList/'
 import EncounterStats from '../EncounterStats/'
-import {hanldeChartViewChange,hanldeToggleShowDetails} from '../../store/store'
+import {
+    hanldeChartViewChange,
+    hanldeToggleShowDetails
+} from '../../store/store'
+
 import './style.scss'
 
 const Header = (props) => {

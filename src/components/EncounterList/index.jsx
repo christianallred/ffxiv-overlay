@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
+import numeral from 'numeral';
+
 import {
     handleEncounterSelect, 
     getSelectedData
@@ -20,12 +22,10 @@ const EncounterList = (props) => {
     return (
         <div className="encounter-data ff-header">
             <span className="button" onClick={ () => setShow( !show ) }>
-                {props.Encounter.title ? props.Encounter.title : "Encounter"} ({props.Encounter.duration})
-                
+                {props.Encounter.title ? props.Encounter.title : "Encounter"} - {numeral(props.Encounter.DURATION).format("00:00")} 
                 {!show ? null : <div className="dropdown-menu encounters-list-dropdown">
-                    <div onClick={() => props.handleEncounterSelect(null)}>
-                        Current Fight
-                    </div>
+                    <div onClick={() => props.handleEncounterSelect(null)}>Current Fight</div>
+                    {/* <div onClick={() => props.handleEncounterSelect("ALL")}>All</div> */}
                     {encounters}
                 </div>
                 }   

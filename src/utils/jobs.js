@@ -38,6 +38,8 @@ import Titan from '../images/Titan.png'
 import topaz from '../images/topaz.png'
 import war from '../images/war.png'
 import whm from '../images/whm.png'
+import gnb from '../images/gnb.png'
+import dnc from '../images/dnc.png'
 
 const Jobs = {
     acn, 
@@ -80,6 +82,8 @@ const Jobs = {
     topaz,
     war,
     whm,
+    gnb,
+    dnc,
 }
 
 export default Jobs
