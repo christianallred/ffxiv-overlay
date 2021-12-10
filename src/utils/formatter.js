@@ -1,4 +1,4 @@
-export default (number) => {
+const foramtNumber = (number) => {
     number = parseFloat(number, 10);
 
     if (number >= 1000) {
@@ -10,3 +10,5 @@ export default (number) => {
 
     return number.toFixed(2);
 };
+
+export default foramtNumber

@@ -1,5 +1,4 @@
 import { createStore } from 'redux'
-import applyEventListners from './eventListeners'
 import { concat, sortBy,filter, cloneDeep } from 'lodash';
 import {whiteListendEncounterMetrics,whiteListCombatantMetrics} from '../utils/constants';
 // Constants
@@ -117,7 +116,7 @@ export const getSelectedData = (state) => {
 export const getSelectedCombatant = (state) => {
     const Encounter = getSelectedData(state);
     return Encounter.Combatant.find(cob => cob.name === state.SelectedCombatant)
-    return Encounter.Combatant[state.SelectedCombatant]
+   //  return Encounter.Combatant[state.SelectedCombatant]
 }
 
 
@@ -131,6 +130,7 @@ export const handleStateChange = (data) => ({
     type: HANDLE_STATE_CHANGE,
     data
 })
+
 export const handleEncounterSelect = (index) => ({
     type: HANDLE_ENCOUNTER_SELECT,
     index
@@ -154,7 +154,7 @@ export const hanldeCombatantSelect = (combatant) => ({
 // Store
 const store = createStore( reducer, initialState )
 
-applyEventListners(store.dispatch, store.getState)
+
 
 export default store;
 
@@ -234,7 +234,6 @@ const deepMergeEncounters = (encounters) => {
     }
     return ret;
 }
-
 const deepMergeEncounter = (encounter, ExistingEncounter) => { 
     // todo: finish teh merge logic
     return {
@@ -269,7 +268,6 @@ const deepMergeEncounter = (encounter, ExistingEncounter) => {
     }
     
 }
-
 const deepMergeCombatants = (combatant, Existing) => {
     // TODO: finish teh merge logic. 
     var object = {

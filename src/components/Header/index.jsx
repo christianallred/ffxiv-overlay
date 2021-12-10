@@ -23,12 +23,12 @@ const Header = (props) => {
                     </div>
                     <div className={`button chart-view-switcher ${props.chartView}`} 
                         onClick={props.hanldeChartViewChange}>
-                        {props.chartView}
+                       {props.chartView}
                     </div>
                 </div>
             </div>
             <EncounterStats />
-        </div>
+        </div>  
     );
 }
 

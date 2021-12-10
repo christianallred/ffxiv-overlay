@@ -1,20 +1,14 @@
-import { hanldeInjest, handleStateChange } from './store'
+import { hanldeInjest } from './store'
 
-export default (dispatch, getState) => {
+export const handleEventsListner = (dispatch, getState) => {
     const onOverlayDataUpdate = (update) => {
-        dispatch(hanldeInjest(update.detail))
+        console.log(update)
+        dispatch(hanldeInjest(update))
     }
     
-    const onOverlayStateUpdate = (update) => { 
-        dispatch(handleStateChange(update.detail))
-    }
+    window.addOverlayListener('CombatData',  onOverlayDataUpdate)
 
-    const onOverlayMessage = (update) => {
-        return update;
-    }
-
-    document.addEventListener('onOverlayDataUpdate', onOverlayDataUpdate);
-    document.addEventListener("onOverlayStateUpdate", onOverlayStateUpdate);
-    document.addEventListener("message", onOverlayMessage)
+    window.startOverlayEvents()
 }
+
 

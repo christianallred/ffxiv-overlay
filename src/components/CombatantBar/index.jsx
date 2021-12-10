@@ -5,7 +5,7 @@ import Jobs from '../../utils/jobs'
 import './style.scss'
 
 const CombatantBar = (props) => {
-    const jobImage = (job) => Jobs[job.toLowerCase()];
+    const jobImage = (job) => `/images/icon/glow/${job}.png`
 
     var width = Math.min(100, parseInt(props.total / props.max * 100, 10)) + '%';
     if (props.perSecond === "--- ") return null;
