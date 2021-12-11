@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/ffxiv-overlay/static/css/main.9f23c56d.chunk.css",
-    "main.js": "/ffxiv-overlay/static/js/main.229db3a2.chunk.js",
-    "main.js.map": "/ffxiv-overlay/static/js/main.229db3a2.chunk.js.map",
-    "runtime-main.js": "/ffxiv-overlay/static/js/runtime-main.68981185.js",
-    "runtime-main.js.map": "/ffxiv-overlay/static/js/runtime-main.68981185.js.map",
-    "static/js/2.3f39e2d4.chunk.js": "/ffxiv-overlay/static/js/2.3f39e2d4.chunk.js",
-    "static/js/2.3f39e2d4.chunk.js.map": "/ffxiv-overlay/static/js/2.3f39e2d4.chunk.js.map",
+    "main.css": "/ffxiv-overlay/static/css/main.e17e0438.chunk.css",
+    "main.js": "/ffxiv-overlay/static/js/main.6f362c8f.chunk.js",
+    "main.js.map": "/ffxiv-overlay/static/js/main.6f362c8f.chunk.js.map",
+    "runtime-main.js": "/ffxiv-overlay/static/js/runtime-main.b5b86889.js",
+    "runtime-main.js.map": "/ffxiv-overlay/static/js/runtime-main.b5b86889.js.map",
+    "static/js/2.10047a5e.chunk.js": "/ffxiv-overlay/static/js/2.10047a5e.chunk.js",
+    "static/js/2.10047a5e.chunk.js.map": "/ffxiv-overlay/static/js/2.10047a5e.chunk.js.map",
+    "static/js/3.558a7df3.chunk.js": "/ffxiv-overlay/static/js/3.558a7df3.chunk.js",
+    "static/js/3.558a7df3.chunk.js.map": "/ffxiv-overlay/static/js/3.558a7df3.chunk.js.map",
     "index.html": "/ffxiv-overlay/index.html",
-    "precache-manifest.81d4d7e262dba945c0936e6e749cabbe.js": "/ffxiv-overlay/precache-manifest.81d4d7e262dba945c0936e6e749cabbe.js",
-    "service-worker.js": "/ffxiv-overlay/service-worker.js",
-    "static/css/main.9f23c56d.chunk.css.map": "/ffxiv-overlay/static/css/main.9f23c56d.chunk.css.map"
+    "static/css/main.e17e0438.chunk.css.map": "/ffxiv-overlay/static/css/main.e17e0438.chunk.css.map",
+    "static/js/2.10047a5e.chunk.js.LICENSE.txt": "/ffxiv-overlay/static/js/2.10047a5e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.68981185.js",
-    "static/js/2.3f39e2d4.chunk.js",
-    "static/css/main.9f23c56d.chunk.css",
-    "static/js/main.229db3a2.chunk.js"
+    "static/js/runtime-main.b5b86889.js",
+    "static/js/2.10047a5e.chunk.js",
+    "static/css/main.e17e0438.chunk.css",
+    "static/js/main.6f362c8f.chunk.js"
   ]
 }
