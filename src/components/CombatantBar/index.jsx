@@ -1,11 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {hanldeCombatantSelect} from '../../store/store';
-import Jobs from '../../utils/jobs'
 import './style.scss'
 
 const CombatantBar = (props) => {
-    const jobImage = (job) => `/images/icon/glow/${job}.png`
+    const jobImage = (job) => `/ffxiv-overlay/images/glow/${job.toUpperCase()}.png`
 
     var width = Math.min(100, parseInt(props.total / props.max * 100, 10)) + '%';
     if (props.perSecond === "--- ") return null;
