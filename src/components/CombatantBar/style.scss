@@ -21,79 +21,88 @@ li:last-child {
 
     &.pgl,  
     &.mnk {
-        background-color: #b38915;
+        background-color: rgb(255, 152, 0);
     }
     
     &.acn,  
     &.smn {
-        background-color: #33670b;
+        background-color: rgb(46, 125, 50);
     }
 
     &.lnc,  
     &.drg {
-        background-color: #3752d8;
+        background-color: rgb(63, 81, 181);
     }
 
     &.cnj,  
     &.whm {
-        background-color: #fff;
+        background-color: rgb(117, 117, 117);
     }
 
     &.thm,  
     &.blm {
-        background-color: #674598;
+        background-color: rgb(126, 87, 194);
     }
 
     &.nin,  
     &.rog {
-        background-color: #ee2e48;
+        background-color: rgb(211, 47, 47);
     }
 
     &.sch {
-        background-color: #4442a8;
+        background-color: rgb(121, 134, 203);
     }
 
     &.arc,  
     &.brd {
-        background-color: #adc551;
+        background-color: rgb(158, 157, 36);
     }
 
     &.gld,  
     &.pld {
-        background-color: #7b9aa2;
+        background-color: rgb(21, 28, 100);
     }
 
     &.mrd, 
     &.war {
-        background-color: #a91a16;
+        background-color: rgb(153, 23, 23);
     }
 
     &.drk {
-        background-color: #4a2829;
+        background-color: rgb(136, 14, 79);
     }
 
     &.ast {
-        background-color: #f6da6a;
+        background-color: rgb(121, 85, 72);
     }
 
     &.mch {
-        background-color: #6bcec2;
+        background-color: rgb(0, 151, 167);
     }
 
     &.sam {
-        background-color: #8ad87f;
+        background-color: rgb(255, 202, 40);
     }
 
     &.rdm {
-        background-color: #E1907E;
+        background-color: rgb(233, 30, 99);
     }
 
     &.dnc{
-        background-color: #dc84c3;
+        background-color: rgb(244, 143, 177);
     }
 
     &.gbr{
-        background-color: #8b91f0;
+        background-color: rgb(78, 52, 46);
+    }
+    &.rpr{
+        background-color: rgb(254, 179, 0);
+    }
+    &.blu{     
+        background-color: rgb(0, 185, 247);
+    }
+    &.sge{
+        background-color: rgb(79, 195, 247);
     }
 }
 
